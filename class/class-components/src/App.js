@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import ClassComponents from './components/ClassComponents'
+import ClassComponents from './components/ClassComponents';
+import Childrens from './components/Childrens';
 
 const dataBase = [
   {firstName: "Stefano", lastName:"Quiroz"},
@@ -22,6 +23,10 @@ function App() {
     <div className="App">
       {db}
       {/* {dataBase.map((items, index)=> (<ClassComponents {...items} key={index}/>))} */}
+      <Childrens header={"This is a children"}>
+        <p>Hola</p>
+        <p>Mundo</p>
+      </Childrens>
     </div>
   );
 }
