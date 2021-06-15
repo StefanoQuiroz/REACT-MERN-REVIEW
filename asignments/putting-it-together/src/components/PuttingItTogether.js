@@ -38,10 +38,10 @@ const PuttingItTogether = (props) => {
     }
 
     const decrementAge = () => {
-        setAges(ages-1 );
+        setAges(ages-1);
     }
     return (
-        <div>
+        <div className="block">
             <h2>{lastName}, {firstName}</h2>
             <p>Age: {ages}</p>
             <p>Hair Color: {hairColor}</p>

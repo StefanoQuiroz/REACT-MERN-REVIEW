@@ -1,0 +1,22 @@
+.App {
+    text-align: center;
+    .block{
+        border: 4px dotted greenyellow;
+        width: 55%;
+        margin: 1.2rem auto;
+    }
+    h2{
+        color: red;
+    }
+    p{
+        color:blue
+    }
+    button{
+        padding: 0.7rem;
+        margin-bottom: 0.6rem;
+        color: #fff;
+        background-color: dodgerblue;
+        border-radius: 7px;
+        border: 1px solid transparent;
+    }
+}

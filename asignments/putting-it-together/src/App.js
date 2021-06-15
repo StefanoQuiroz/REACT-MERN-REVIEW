@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './scss/App.scss';
 import PuttingItTogether from './components/PuttingItTogether';
 const db = [
   {firstName: "Jane", lastName:"Doe", age:45, hairColor:"Black"},
