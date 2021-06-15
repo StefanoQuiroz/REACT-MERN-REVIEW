@@ -4,7 +4,7 @@ import ClassComponents from './components/ClassComponents'
 function App() {
   return (
     <div className="App">
-      <ClassComponents/>
+      <ClassComponents firstName={"Stefano"} lastName={"Quiroz"}/>
     </div>
   );
 }
