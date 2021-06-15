@@ -8,7 +8,7 @@ export default class ClassComponents extends Component {
     }
 } */
 
-import React, { Component } from 'react'
+/* import React, { Component } from 'react'
 
 export default class ClassComponents extends Component {
     render() {
@@ -19,4 +19,18 @@ export default class ClassComponents extends Component {
             </div>
         )
     }
+} */
+
+import React from 'react';
+
+const ClassComponents = (props) => {
+    const {firstName, lastName} = props
+    return (
+        <div>
+            <h2>My name is: {firstName} {lastName}</h2>
+        </div>
+    );
 }
+
+export default ClassComponents;
+
