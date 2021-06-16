@@ -1,0 +1,57 @@
+#root *{
+    border: 3px solid black;
+}
+
+$spacing: 24px;
+$appColor: #dddddd;
+$headerColor: #6aa84f;
+$navColor: #6fa8dc;
+$mainColor: #e06666;
+$subContentColor: #ffd966;
+$advertisementColor: #b4a7d6;
+
+.App{
+    background-color: $appColor;
+    overflow: hidden;
+    //height: 85vh;
+    box-sizing: border-box;
+    display: grid;
+    grid-template: 100px auto / repeat(4, 1fr);
+    grid-template-areas:
+    "header header header header"
+    "nav main main main";
+    padding: 1rem;
+    margin: 1rem;
+    gap: 1rem;
+}
+
+header{
+    grid-area: header;
+    background-color: $headerColor;
+}
+
+nav{
+    grid-area: nav;
+    background-color: $navColor;
+    align-self: center;
+    height: 30rem;
+}
+
+main{
+    grid-area: main;
+    background-color: $mainColor;
+    display: grid;
+    grid-template: auto 100px / repeat(3, 1fr);
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.subContent{
+    background-color: $subContentColor;
+}
+
+.advertisement{
+    background-color: $advertisementColor;
+    grid-column: 1/4;
+}
