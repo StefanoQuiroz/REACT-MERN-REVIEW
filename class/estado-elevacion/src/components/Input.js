@@ -4,14 +4,15 @@ import React from 'react';
 const Input = (props) => {
     const {palabraInicial, setPalabraInicial} = props
     return (
-        <div>
+        <form>
             <label htmlFor="word">Filter</label>
             <br />
             <input type="text" id="word" value={palabraInicial} onChange={e=>setPalabraInicial(e.target.value)}/>
             {/* value = valor inicial, toma a bariable palabraInicial
             onChange se usa para cambiar el input y actualizar el value con el setPalabraInicial
             e.target obtiene una referencia, apunta a algo, en este caso value, pero puede ser un form, un name, etc. */} 
-        </div>
+        </form>
+        
     );
 }
 

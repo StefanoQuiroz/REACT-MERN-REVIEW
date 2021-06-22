@@ -11,6 +11,8 @@ const Wrapper = (props) => {
             <Input palabraInicial={input} setPalabraInicial={setInput}/>
             <FilteredList inputWord={input} wordList={wrapperItems.filter(item => item.indexOf(input) > -1)}/>                
         </div>
+        //wrapperItems={["something", "sombrero", "sombra", "tesla"]}
+        //input => "s"
     );
 }
 
