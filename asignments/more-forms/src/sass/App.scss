@@ -1,0 +1,47 @@
+.App{
+    margin: 0 auto;
+    width: 95%;
+    padding: 2rem;
+    outline: 1px dotted red;
+    background-color: rgb(225, 230, 217);
+}
+
+form{
+    width: 25%;
+    margin: auto;
+    h2{
+        text-align: center;
+        text-decoration: underline;
+    }
+    .row{
+      background-color: #f6f6f6;
+      padding: 0.4rem;
+      margin-bottom: 0.6rem;
+      border-radius: 8px;
+      label{
+          display:inline-block;
+          color: #bababa;
+          width: 25%;
+          text-align: center;
+      }
+      input{
+          width:70%;
+      }
+      p{
+          text-align:center;
+          color:red;
+          font-size: 12px;
+          font-weight: bold;
+      }
+    }
+}
+
+.form-data{
+    width: 20%;
+    margin: auto;
+    padding: 2rem;
+    h3{
+        text-align: center;
+        text-decoration: underline; 
+    }
+}
