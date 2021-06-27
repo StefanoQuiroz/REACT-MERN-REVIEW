@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './scss/App.scss';
 import FormValidation from './components/FormValidation';
 
 function App() {

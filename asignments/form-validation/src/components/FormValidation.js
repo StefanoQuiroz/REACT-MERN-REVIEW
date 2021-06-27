@@ -51,34 +51,39 @@ const FormValidation = () => {
     userValidation()
     
     return (
-        <form onSubmit={onSubmit}>
-            <h2>Form Validation useReducer</h2>
-            <div className="row">
-                <label htmlFor="FirstName">First Name: </label>
-                <input type="text" id="FirstName" name="firstName" value={state.firstName} onChange={onChange}/>
-                {
-                    //operador logico &&
-                    (state.error.firstName !== null) && (<p className="error">{state.error.firstName}</p>)
-                    // Operador ternario
-                    //(state.error.firstName !== null) ? <p className="error">{state.error.firstName}</p> : ''
-                }
+        <>
+            <form onSubmit={onSubmit}>
+                <h2>Form Validation useReducer</h2>
+                <div className="row">
+                    <label htmlFor="FirstName">First Name: </label>
+                    <input type="text" id="FirstName" name="firstName" value={state.firstName} onChange={onChange}/>
+                    {
+                        //operador logico &&
+                        (state.error.firstName !== null) && (<p className="error">{state.error.firstName}</p>)
+                        // Operador ternario
+                        //(state.error.firstName !== null) ? <p className="error">{state.error.firstName}</p> : ''
+                    }
+                </div>
+                <div className="row">
+                    <label htmlFor="LastName">Last Name: </label>
+                    <input type="text" id="LastName" name="lastName" value={state.lastName} onChange={onChange}/>
+                    {
+                        (state.error.lastName !== null) && (<p className="error">{state.error.lastName}</p>)
+                    }
+                </div>
+                <div className="row">
+                    <label htmlFor="Email">Email: </label>
+                    <input type="email" id="Email" name="email" value={state.email} onChange={onChange}/>
+                    {
+                        (state.error.email !== null) && (<p className="error">{state.error.email}</p>)
+                    }
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <div className="results">
+                <p>{JSON.stringify(state)}</p>
             </div>
-            <div className="row">
-                <label htmlFor="LastName">Last Name: </label>
-                <input type="text" id="LastName" name="lastName" value={state.lastName} onChange={onChange}/>
-                {
-                    (state.error.lastName !== null) && (<p className="error">{state.error.lastName}</p>)
-                }
-            </div>
-            <div className="row">
-                <label htmlFor="Email">Email: </label>
-                <input type="email" id="Email" name="email" value={state.email} onChange={onChange}/>
-                {
-                    (state.error.email !== null) && (<p className="error">{state.error.email}</p>)
-                }
-            </div>
-            <input type="submit" value="Send"/>
-        </form>
+        </>
     );
 }
 
