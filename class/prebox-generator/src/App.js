@@ -7,14 +7,20 @@ import MessageDisplay from './levantandoEstados/MessageDisplay';
 
 function App() {
   
-  const [message, setMessage] = useState("");
-  
+  const [currentMessage, setCurrentMessage] = useState("There is no messages");
+  //(2) actualiza el currentMessage con el setCurrentMessage(msg = toma del input)
+  console.log({2:currentMessage})
+  const youHaveGotMail = (mensaje) => {
+    setCurrentMessage(mensaje);
+  }
+
   return (
     <div className="App">
       {/* <Button variant="contained" color="primary" href="https://www.google.com" fullWidth>Google</Button> */}
       {/* <Groceries/> */}
-      <MessageForm msg={message} setMsg={setMessage}/>
-      <MessageDisplay message={message}/>
+      <MessageForm funcMsg={youHaveGotMail}/>
+      {/* (le pasa al message props el valor nuevo del currentMessage) */}
+      <MessageDisplay message={currentMessage}/>
     </div>
   );
 }

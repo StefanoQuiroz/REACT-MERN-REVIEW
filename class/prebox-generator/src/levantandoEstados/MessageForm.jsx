@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const MessageForm = ({msg, setMsg}) => {
+const MessageForm = ({funcMsg}) => {
     
+    const [msg, setMsg] = useState("");
+
     const onSubmit = (event) => {
         event.preventDefault();
-        console.log({msg});
+        console.log({1:msg});
+        // (1) llamamos este prop funcion con el (argumento msg que toma el input)
+        funcMsg(msg);
     }
 
     return (
