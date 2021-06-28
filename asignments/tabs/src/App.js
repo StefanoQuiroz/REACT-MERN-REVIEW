@@ -5,7 +5,7 @@ import Tabs from './components/Tabs';
 function App() {
   return (
     <div className="App">
-      <Tabs/>
+      <Tabs tabs={[1,2,3]}/>
     </div>
   );
 }
