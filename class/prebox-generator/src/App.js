@@ -25,7 +25,7 @@ function App() {
       setCurrentMessage(theChildState);
     }
 
-    console.log({3: currentMessage})
+    console.log({2: currentMessage})
 
     return (
     <div className="App">
