@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
@@ -14,8 +14,10 @@ const StyledDiv = styled.div`
 `;
 
 const Box = () => {
-    //
-
+    //Clean the inputs with useRef
+    const colorInput = useRef(null);
+    const heightInput = useRef(null);
+    const widthInput = useRef(null);
     //manage the states
     const [state, setState] = useState({
         boxes : [],
@@ -26,15 +28,7 @@ const Box = () => {
 
     //Se implementa cada onChangeColor, onChangeHeight y onChangeWidth para cada botón Add
 
-    const onChange = (event) => {
-        const {name, value} = event.target;
-        setState({
-            ...state,
-            [name]:value
-        })
-    }
-
-    /* const onChangeColor = (event) => {
+    const onChangeColor = (event) => {
         const {value} = event.target;
         setState({
             ...state,
@@ -55,7 +49,7 @@ const Box = () => {
             ...state,
             width: value
         })
-    } */
+    }
     const onSubmit = (event) => {
         event.preventDefault();
         //si no aplico el setState cambiandole otro key y qye reciba el state.color, este se cambia automaticamente con el onChange sin necesidad del onSubmit (hacer click en el botón)
@@ -66,6 +60,9 @@ const Box = () => {
             width: 0
             
         })
+        colorInput.current.value="";
+        heightInput.current.value="";
+        widthInput.current.value="";
         console.log(state.boxes);    
         //[pink, green, blue, black]    
     }
@@ -84,15 +81,15 @@ const Box = () => {
             <form onSubmit={onSubmit}>
                 <div className="row">
                     <label htmlFor="color">Color</label>
-                    <input type="text" id="color" name="color" value={state.color} onChange={onChange} placeholder="Enter the color of the box"/>
+                    <input type="text" ref={colorInput} id="color" name="color" value={state.color} onChange={onChangeColor} placeholder="Enter the color of the box"/>
                 </div>
                 <div className="row">
                     <label htmlFor="height">Height</label>
-                    <input type="number" id="height" name="height" value={state.height} onChange={onChange} placeholder="Enter the height of the box"/>
+                    <input type="text" id="height" ref={heightInput} name="height" value={state.height} onChange={onChangeHeight} placeholder="Enter the height of the box"/>
                 </div>
                 <div className="row">
                     <label htmlFor="width">Width</label>
-                    <input type="number" id="width" name="width" value={state.width} onChange={onChange} placeholder="Enter the width of the box"/>
+                    <input type="text" id="width" ref={widthInput} name="width" value={state.width} onChange={onChangeWidth} placeholder="Enter the width of the box"/>
                 </div>
                <div className="button">
                    <button type="submit">Add</button>
