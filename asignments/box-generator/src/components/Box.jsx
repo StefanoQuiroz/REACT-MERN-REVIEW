@@ -8,8 +8,8 @@ const StyledDiv = styled.div`
     justify-content: center;
     align-items: center;
     margin: 2rem 1rem;
-    width: 200px;
-    height: 200px;
+    width: ${w => w.newWidth+"px" || "200px"};
+    height: ${h => h.newHeight+"px" || "200px"};
     background-color: ${ color => color.newColor || "red"};
 `;
 
@@ -17,14 +17,32 @@ const Box = () => {
     //manage the states
     const [state, setState] = useState({
         boxes : [],
-        color: ""
+        color: "",
+        height: 0,
+        width: 0
     })
 
-    const onChange = (event) => {
-        const {name, value} = event.target;
+    //Se implementa cada onChangeColor, onChangeHeight y onChangeWidth para cada botón Add
+    const onChangeColor = (event) => {
+        const {value} = event.target;
         setState({
             ...state,
-            [name]: value
+            color: value
+        })
+    }
+
+    const onChangeHeight = (event) => {
+        const {value} = event.target;
+        setState({
+            ...state,
+            height: value
+        })
+    }
+    const onChangeWidth = (event) => {
+        const {value} = event.target;
+        setState({
+            ...state,
+            width: value
         })
     }
 
@@ -32,8 +50,10 @@ const Box = () => {
         event.preventDefault();
         //si no aplico el setState cambiandole otro key y qye reciba el state.color, este se cambia automaticamente con el onChange sin necesidad del onSubmit (hacer click en el botón)
         setState({
-            boxes: [...state.boxes, {colors:state.color}],
-            color: ""
+            boxes: [...state.boxes, {Color:state.color, Height:state.height, Width:state.width}],
+            color: "",
+            height: 0,
+            width: 0
         })
         //console.log(state.boxes);    
         //console.log(state.boxes);
@@ -42,8 +62,10 @@ const Box = () => {
 
     const divs = state.boxes.map((item, index) => (
         <StyledDiv 
-            newColor={item.colors}
             key={index}
+            newColor={item.Color}
+            newHeight={item.Height}
+            newWidth={item.Width}
         />
     ));
 
@@ -52,7 +74,17 @@ const Box = () => {
             <form onSubmit={onSubmit}>
                 <div className="row">
                     <label htmlFor="color">Color</label>
-                    <input type="text" id="color" name="color" value={state.color} onChange={onChange} placeholder="Enter color, width, and height of the box"/>
+                    <input type="text" id="color" name="color" value={state.color} onChange={onChangeColor} placeholder="Enter the color of the box"/>
+                    <button type="submit">Add</button>
+                </div>
+                <div className="row">
+                    <label htmlFor="height">Height</label>
+                    <input type="number" id="height" name="height" value={state.height} onChange={onChangeHeight} placeholder="Enter the height of the box"/>
+                    <button type="submit">Add</button>
+                </div>
+                <div className="row">
+                    <label htmlFor="width">Width</label>
+                    <input type="number" id="width" name="width" value={state.width} onChange={onChangeWidth} placeholder="Enter the width of the box"/>
                     <button type="submit">Add</button>
                 </div>
             </form>
