@@ -29,8 +29,8 @@ const Box = () => {
     //Se implementa cada onChangeColor, onChangeHeight y onChangeWidth para cada botón Add
 
     const onChangeColor = (event) => {
-        //const {value} = event.target;
-        const value = event.target.value;
+        const {value} = event.target;
+        //const value = event.target.value;
         setState({
             ...state,
             color: value
@@ -38,16 +38,16 @@ const Box = () => {
     }
 
     const onChangeHeight = (event) => {
-        //const {value} = event.target;
-        const value = event.target.value;
+        const {value} = event.target;
+        //const value = event.target.value;
         setState({
             ...state,
             height: value
         })
     }
     const onChangeWidth = (event) => {
-        //const {value} = event.target;
-        const value = event.target.value;
+        const {value} = event.target;
+        //const value = event.target.value;
         setState({
             ...state,
             width: value
@@ -66,8 +66,7 @@ const Box = () => {
         colorInput.current.value="";
         heightInput.current.value="";
         widthInput.current.value="";
-        console.log(state.boxes);    
-        //[pink, green, blue, black]    
+        //console.log(state.boxes);    
     }
 
     const divs = state.boxes.map((item, index) => (
@@ -80,6 +79,7 @@ const Box = () => {
     ));
 
     return (
+        /* retiramos el value={state.atributo}, porque sino aparece los valores por default en el objeto con los inicializadores */
         <div className="container">
             <form onSubmit={onSubmit}>
                 <div className="row">
@@ -88,11 +88,11 @@ const Box = () => {
                 </div>
                 <div className="row">
                     <label htmlFor="height">Height</label>
-                    <input type="text" id="height" ref={heightInput} name="height" /* value={state.height} */ onChange={onChangeHeight} placeholder="Enter the height of the box"/>
+                    <input type="number" id="height" ref={heightInput} name="height" /* value={state.height} */ onChange={onChangeHeight} placeholder="Enter the height of the box"/>
                 </div>
                 <div className="row">
                     <label htmlFor="width">Width</label>
-                    <input type="text" id="width" ref={widthInput} name="width" /* value={state.width} */ onChange={onChangeWidth} placeholder="Enter the width of the box"/>
+                    <input type="number" id="width" ref={widthInput} name="width" /* value={state.width} */ onChange={onChangeWidth} placeholder="Enter the width of the box"/>
                 </div>
                <div className="button">
                    <button type="submit">Add</button>
