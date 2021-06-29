@@ -24,6 +24,22 @@ const StyledButton = styled.button`
     box-sizing: border-box;
 `;
 
+const StyledContent = styled.div`
+    //outline: 1px solid red;
+    width: 60%;
+    margin-left: 10.8%;
+    margin-top: 1%;
+    box-sizing: border-box;
+    border: 3px solid #d6d6d6;
+    display: flex;
+    padding: 1rem;
+    height: 20rem;
+`;
+
+const StyledTab = styled.div`
+    justify-content: flex-start;
+    font-size: 2.5rem;;
+`;
 
 const Tabs = ({tabs}) => {
     
@@ -53,9 +69,10 @@ const Tabs = ({tabs}) => {
             <TabsDiv>
                 {buttonTabs}
             </TabsDiv>
-            <div className="content">
-                <div>Tab {state.tab} content is showing here</div>
-            </div>            
+
+            <StyledContent>
+                <StyledTab>Tab {state.tab} content is showing here</StyledTab>
+            </StyledContent>            
         </div>
     );
 }
