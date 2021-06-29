@@ -18,6 +18,7 @@ const StyledButton = styled.button`
     padding: 0.5rem 0rem;
     background-color: ${props => (props.backColor) ? "#000" : "#fff"};
     color: ${props => (props.color) ? "#fff" : "#000"};
+    font-style: ${props => (props.fStyle) ? "italic" : "normal"};
     border-color: ${props => (props.border) ? "#000" : "#efefef"};
     border-width: 3px; 
     border-style: solid;
@@ -60,6 +61,7 @@ const Tabs = ({tabs}) => {
             onClick={event => onClick(item)}
             backColor={state.tab === item}
             color={state.tab === item}
+            fStyle={state.tab === item}
             border={state.tab === item}
         >Tabs {item}</StyledButton>
     )) 
