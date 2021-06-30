@@ -2,9 +2,7 @@ import React from 'react';
 
 const NavBar = () => {
     return (
-        <div>
-            
-        </div>
+        <nav>Hi Bob Smith!</nav>
     );
 }
 

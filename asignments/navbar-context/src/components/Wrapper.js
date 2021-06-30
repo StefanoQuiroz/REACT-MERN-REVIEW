@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
+
+export const MyContext = createContext(); 
 
 const Wrapper = () => {
+    const [state, setState] = useState({
+        name:""
+    })
     return (
-        <div>
+        <MyContext.Provider >
             
-        </div>
+        </MyContext.Provider>
     );
 }
 

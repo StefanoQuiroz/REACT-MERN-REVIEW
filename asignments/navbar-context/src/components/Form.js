@@ -2,9 +2,12 @@ import React from 'react';
 
 const Form = () => {
     return (
-        <div>
-            
-        </div>
+        <form>
+            <div>
+                <label htmlFor="name">Your Name: </label>
+                <input type="text" id="name"/>
+            </div>            
+        </form>
     );
 }
 
