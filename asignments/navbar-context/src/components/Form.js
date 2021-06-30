@@ -1,5 +1,22 @@
 import React, { useContext } from 'react';
+import styled from 'styled-components';
 import { MyContext } from './Wrapper';
+
+const StyledForm = styled.form`
+
+`;
+
+const StyledContainer = styled.div`
+
+`;
+
+const StyledLabel = styled.label`
+
+`;
+
+const StyledInput = styled.input`
+
+`;
 
 const Form = () => {
     const {state, setState} = useContext(MyContext)
@@ -13,12 +30,12 @@ const Form = () => {
     }
 
     return (
-        <form>
-            <div>
-                <label htmlFor="name">Your Name: </label>
-                <input type="text" id="name" name="name" value={state.name} onChange={onChange}/>
-            </div>            
-        </form>
+        <StyledForm>
+            <StyledContainer>
+                <StyledLabel htmlFor="name">Your Name: </StyledLabel>
+                <StyledInput type="text" id="name" name="name" value={state.name} onChange={onChange}/>
+            </StyledContainer>            
+        </StyledForm>
     );
 }
 
