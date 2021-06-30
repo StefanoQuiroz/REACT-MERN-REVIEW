@@ -1,8 +1,9 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
+import { MyContext } from './Wrapper';
 const NavBar = () => {
+    const {state} = useContext(MyContext)
     return (
-        <nav>Hi Bob Smith!</nav>
+        <nav>Hi {state.name}!!</nav>
     );
 }
 

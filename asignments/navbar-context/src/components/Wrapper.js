@@ -2,13 +2,13 @@ import React, { createContext, useState } from 'react';
 
 export const MyContext = createContext(); 
 
-const Wrapper = () => {
+const Wrapper = ({children}) => {
     const [state, setState] = useState({
         name:""
     })
     return (
-        <MyContext.Provider >
-            
+        <MyContext.Provider value={{state, setState}} >
+            {children}
         </MyContext.Provider>
     );
 }
